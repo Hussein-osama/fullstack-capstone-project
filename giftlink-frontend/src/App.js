@@ -11,22 +11,25 @@ import SearchPage from './components/SearchPage/SearchPage';
 function App() {
   const navigate = useNavigate();
 
+  const handleNavigation = () => {
+    navigate('/app/login'); // Example usage of navigate
+  };
+
   return (
     <>
-      {/* Navbar for consistent navigation across pages */}
       <Navbar />
-
-      {/* Define Routes for different components */}
+      <button onClick={handleNavigation}>Go to Login Page</button>
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/app" element={<MainPage />} />
         <Route path="/app/login" element={<LoginPage />} />
         <Route path="/app/register" element={<RegisterPage />} />
         <Route path="/app/details/:productId" element={<DetailsPage />} />
-        <Route path="/app/search" element={<SearchPage/>} />
+        <Route path="/app/search" element={<SearchPage />} />
       </Routes>
     </>
   );
 }
+
 
 export default App;
